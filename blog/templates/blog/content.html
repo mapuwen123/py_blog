@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/semantic.min.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static "js/semantic.min.js" %}"></script>
+</head>
+<aside class="sidebar">
+    <div class="sidebar-container">
+        <div class="sidebar-logo">
+            <a href="/blog" class="logo">Marvin</a>
+        </div>
+        <menu class="sidebar-menu">
+            <li class="menu-items"><a class="menu-links" href="/blog">主页</a></li>
+            <li class="menu-items"><a class="menu-links" href="#">关于</a></li>
+            <li class="menu-items"><a class="menu-links" href="#">联系</a></li>
+            <li class="menu-items"><a class="menu-links" href="https://github.com/mapuwen123">Github</a></li>
+            <li class="menu-items"><a class="menu-links"
+                                      href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>
+        </menu>
+
+        <div class="sidebar-social">
+            <li class="social-items"><a href="https://www.facebook.com/" class="social-links"><i
+                    class="social-icons fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li class="social-items"><a href="https://twitter.com/" class="social-links"><i
+                    class="social-icons fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li class="social-items"><a href="https://plus.google.com/" class="social-links"><i
+                    class="social-icons fa fa-google-plus" aria-hidden="true"></i></a></li>
+        </div>
+
+    </div>
+</aside>
+<main role="main">
+    <div class="content">
+        <article class="page-article">
+            <div class="wrap-content">
+                <header class="page-header">
+                    <h1 class="page-title">An old house</h1>
+                    <div class="page-date"><span>2017, Mar 30&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                </header>
+                <div id="show" class="page-content">
+
+                    {#                    <img class="page-img" src="/fresh/assets/img/house.jpg" alt="An old house">#}
+
+                    {#                    {{ content.content }}#}
+
+                </div>
+
+
+            </div>
+        </article>
+
+    </div>
+</main>
+<script type="text/javascript">
+    $('#show').html({{ content.content }});
+</script>
+</body>
+</html>
