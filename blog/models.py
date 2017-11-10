@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # 博文列表
@@ -16,7 +17,7 @@ class Articles(models.Model):
 # 正文内容
 class Content(models.Model):
     id = models.OneToOneField(Articles, primary_key=True)
-    content = models.TextField('内容')
+    content = RichTextUploadingField('内容')
 
     def __str__(self):
         return str(self.id)

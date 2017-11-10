@@ -43,22 +43,25 @@
                     <h1 class="page-title">An old house</h1>
                     <div class="page-date"><span>2017, Mar 30&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
                 </header>
-                <div id="show" class="page-content">
-
-                    {#                    <img class="page-img" src="/fresh/assets/img/house.jpg" alt="An old house">#}
-
-                    {#                    {{ content.content }}#}
-
+                <div style="display:none;">
+                    <textarea name="editor_id" class="ckeditor" name="content" style="width:700px;height:300px;">
+{{ content.content }}
+</textarea>
                 </div>
 
+                <div id="show" class="page-content">
+                </div>
 
             </div>
         </article>
 
     </div>
 </main>
-<script type="text/javascript">
-    $('#show').html({{ content.content }});
+<script charset="utf-8" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<script>
+    CKEDITOR.replace('editor_id');
+    var html = CKEDITOR.instances.editor_id.getData();
+    $('#show').html(html)
 </script>
 </body>
 </html>
