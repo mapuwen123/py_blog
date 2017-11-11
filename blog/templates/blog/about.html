@@ -3,7 +3,7 @@
 <head>
     {% load staticfiles %}
     <meta charset="UTF-8">
-    <title>内容</title>
+    <title>首页</title>
     <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -20,7 +20,7 @@
             <li class="menu-items"><a class="menu-links" href="/blog/contact">联系</a></li>
             <li class="menu-items"><a class="menu-links" href="https://github.com/mapuwen123">Github</a></li>
 {#            <li class="menu-items"><a class="menu-links"#}
-{#                                      href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>#}
+            {#                                      href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>#}
         </menu>
 
         <div class="sidebar-social">
@@ -34,28 +34,28 @@
         <article class="page-article">
             <div class="wrap-content">
                 <header class="page-header">
-                    <h1 class="page-title">An old house</h1>
-                    <div class="page-date"><span>2017, Mar 30&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <h1 class="page-title">About</h1>
+                    <div class="page-date"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
                 </header>
-                <div style="display:none;">
-                    <textarea name="editor_id" class="ckeditor" name="content" style="width:700px;height:300px;">
-{{ content.content }}
-</textarea>
+                <div class="page-content">
+
+                    <p>This is the Fresh theme for Jekyll. You can find out more info about customizing your Jekyll
+                        theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a>
+                    </p>
+
+                    <p>You can find the source code for the Fresh theme at: <a
+                            href="https://github.com/artemsheludko/fresh">fresh</a></p>
+
+                    <p>You can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">jekyll</a>
+                    </p>
+
                 </div>
 
-                <div id="show" class="page-content">
-                </div>
 
             </div>
         </article>
 
     </div>
 </main>
-<script charset="utf-8" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
-<script>
-    CKEDITOR.replace('editor_id');
-    var html = CKEDITOR.instances.editor_id.getData();
-    $('#show').html(html)
-</script>
 </body>
 </html>

@@ -21,3 +21,14 @@ class Content(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+# 联系
+class Contact(models.Model):
+    id = models.AutoField('ID', primary_key=True)
+    name = models.CharField('姓名', max_length=100)
+    email = models.CharField('邮箱', max_length=100)
+    message = models.TextField('内容')
+
+    def __str__(self):
+        return self.name

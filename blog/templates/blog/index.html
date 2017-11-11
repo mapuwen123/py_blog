@@ -4,7 +4,6 @@
     {% load staticfiles %}
     <meta charset="UTF-8">
     <title>首页</title>
-    <link rel="stylesheet" type="text/css" href="{% static "css/semantic.min.css" %}">
     <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
@@ -13,24 +12,19 @@
 <aside class="sidebar">
     <div class="sidebar-container">
         <div class="sidebar-logo">
-            <a href="?page=1" class="logo">Marvin</a>
+            <a href="/blog?page=1" class="logo">Marvin</a>
         </div>
         <menu class="sidebar-menu">
-            <li class="menu-items"><a class="menu-links" href="?page=1">主页</a></li>
-            <li class="menu-items"><a class="menu-links" href="#">关于</a></li>
-            <li class="menu-items"><a class="menu-links" href="#">联系</a></li>
+            <li class="menu-items"><a class="menu-links" href="/blog?page=1">主页</a></li>
+            <li class="menu-items"><a class="menu-links" href="/blog/about">关于</a></li>
+            <li class="menu-items"><a class="menu-links" href="/blog/contact">联系</a></li>
             <li class="menu-items"><a class="menu-links" href="https://github.com/mapuwen123">Github</a></li>
-            <li class="menu-items"><a class="menu-links"
-                                      href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>
+            {#            <li class="menu-items"><a class="menu-links"#}
+            {#                                      href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>#}
         </menu>
 
         <div class="sidebar-social">
-            <li class="social-items"><a href="https://www.facebook.com/" class="social-links"><i
-                    class="social-icons fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li class="social-items"><a href="https://twitter.com/" class="social-links"><i
-                    class="social-icons fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li class="social-items"><a href="https://plus.google.com/" class="social-links"><i
-                    class="social-icons fa fa-google-plus" aria-hidden="true"></i></a></li>
+            Copyright ©2017 Marvin Powered By Marvin Version 1.0.0
         </div>
 
     </div>
