@@ -6,8 +6,11 @@
     <title>首页</title>
     <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/uikit.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/uikit-rtl.min.css" %}">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{% static "js/semantic.min.js" %}"></script>
+    <script src="{% static "js/uikit.min.js" %}"></script>
+    <script src="{% static "js/uikit-icons.min.js" %}"></script>
 </head>
 <aside class="sidebar">
     <div class="sidebar-container">
@@ -31,6 +34,8 @@
 </aside>
 <main role="main">
     <div class="content">
+        {% load pagination_tags %}
+        {% autopaginate article_list 3 %}
         {% for foo in article_list %}
             <article class="main-article">
                 <div class="wrap-content">
@@ -48,32 +53,9 @@
                 </div>
             </article>
         {% endfor %}
-        <div class="pagination">
-            {#如果有上一页又有下一页#}
-            {% if article_list.has_previous and article_list.has_next %}
-                <a href="?page={{ article_list.previous_page_number }}" class="previous"><i class="fa fa-chevron-left"
-                                                                                            aria-hidden="true"></i>
-                    上一页</a>
+        {% paginate %}
 
-                <a href="?page={{ article_list.next_page_number }}" class="next">下一页 <i class="fa fa-chevron-right"
-                                                                                        aria-hidden="true"></i></a>
-                {#如果有上一页#}
-            {% elif article_list.has_previous %}
-                <a href="?page={{ article_list.previous_page_number }}" class="previous"><i class="fa fa-chevron-left"
-                                                                                            aria-hidden="true"></i>
-                    上一页</a>
-
-                <span class="next ">下一页 <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-                {#如果有下一页#}
-            {% elif article_list.has_next %}
-                <span class="previous"><i class="fa fa-chevron-left" aria-hidden="true"></i> 上一页</span>
-
-                <a href="?page={{ article_list.next_page_number }}" class="next">下一页 <i class="fa fa-chevron-right"
-                                                                                        aria-hidden="true"></i></a>
-            {% endif %}
-
-
-        </div>
+    </div>
     </div>
 </main>
 </body>

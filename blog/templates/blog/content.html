@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{% static "js/semantic.min.js" %}"></script>
 </head>
 <aside class="sidebar">
     <div class="sidebar-container">
@@ -19,8 +18,8 @@
             <li class="menu-items"><a class="menu-links" href="/blog/about">关于</a></li>
             <li class="menu-items"><a class="menu-links" href="/blog/contact">联系</a></li>
             <li class="menu-items"><a class="menu-links" href="https://github.com/mapuwen123">Github</a></li>
-{#            <li class="menu-items"><a class="menu-links"#}
-{#                                      href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>#}
+            {#            <li class="menu-items"><a class="menu-links"#}
+            {#                                      href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>#}
         </menu>
 
         <div class="sidebar-social">
@@ -34,9 +33,12 @@
         <article class="page-article">
             <div class="wrap-content">
                 <header class="page-header">
-                    <h1 class="page-title">An old house</h1>
-                    <div class="page-date"><span>2017, Mar 30&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    <h1 class="page-title">{{ article.title }}</h1>
+                    <div class="page-date"><span>{{ article.date }}</span></div>
                 </header>
+                {% if article.picture %}
+                    <img class="post-image" src="/media/{{ article.picture }}">
+                {% endif %}
                 <div style="display:none;">
                     <textarea name="editor_id" class="ckeditor" name="content" style="width:700px;height:300px;">
 {{ content.content }}
