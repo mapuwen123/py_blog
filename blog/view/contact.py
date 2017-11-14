@@ -15,6 +15,6 @@ def contact(request):
             email=email,
             message=message
         )
-        return render(request, 'blog/contact.html', {'result': '感谢您的反馈'})
+        return render(request, 'blog/contact.html', {'result': name})
     else:
         return render(request, 'blog/contact.html')

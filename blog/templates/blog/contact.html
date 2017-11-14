@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/uikit.min.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "css/uikit-rtl.min.css" %}">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="{% static "js/uikit.min.js" %}"></script>
     <script src="{% static "js/uikit-icons.min.js" %}"></script>
@@ -42,7 +41,12 @@
                     <div class="page-date"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
                 </header>
                 <div class="page-content">
-
+                    {% if result %}
+                        <div class="uk-alert-primary" data-uk-alert>
+                            <a class="uk-alert-close" uk-close></a>
+                            <p>{{ result }}，感谢您的反馈！</p>
+                        </div>
+                    {% endif %}
                     <form class="form" action="{% url 'blog:contact' %}" method="POST">
                         {% csrf_token %}
                         <div class="form-item">
@@ -75,9 +79,10 @@
 </main>
 
 <script type="text/javascript">
-    {% if result %}
-        alert('{{ result }}').show()
-    {% endif %}
+    {#    {% if result %}#}
+    {#        alert('{{ result }}').show()#}
+    {#        UIkit.alert('aaa')#}
+    {#    {% endif %}#}
 </script>
 </body>
 </html>
