@@ -2,10 +2,13 @@
 # coding: utf-8
 
 from django.shortcuts import render
+# from django.core.cache import cache
 from blog.models import Articles
 
 
 def index(request):
+    # cache.set('name', '222')
+    # print(cache.get('a'))
     article_list = Articles.objects.order_by('-id')
     return render(request, 'blog/index.html', {'article_list': article_list})
     # # 每页显示条数
