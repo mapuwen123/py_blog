@@ -1,5 +1,5 @@
-from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.db import models
 
 
 # 博文列表
@@ -7,11 +7,15 @@ class Articles(models.Model):
     id = models.AutoField('ID', primary_key=True)
     title = models.CharField('标题', max_length=100)
     picture = models.ImageField('图片', upload_to='uploadImages', null=True)
-    date = models.DateField('时间', max_length=30)
+    date = models.DateTimeField('时间', auto_now=True)
     describe = models.TextField('描述')
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = '文章'
+        verbose_name_plural = '文章列表'
 
 
 # 正文内容
@@ -21,6 +25,10 @@ class Content(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+    class Meta:
+        verbose_name = '正文'
+        verbose_name_plural = '正文列表'
 
 
 # 联系
@@ -32,3 +40,7 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = '反馈'
+        verbose_name_plural = '反馈列表'
