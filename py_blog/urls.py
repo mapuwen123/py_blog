@@ -22,7 +22,7 @@ from py_blog.settings import MEDIA_ROOT
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^blog/', include('blog.urls', namespace='blog')),
+    url(r'^', include('blog.urls', namespace='blog')),
     url(r'^admin/', admin.site.urls),
     url(r'^media/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
