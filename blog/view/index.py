@@ -9,7 +9,7 @@ from blog.models import Articles
 def index(request):
     # cache.set('name', '222')
     # print(cache.get('a'))
-    article_list = Articles.objects.order_by('-id')
+    article_list = Articles.objects.order_by('-date')
     return render(request, 'blog/index.html', {'article_list': article_list})
     # # 每页显示条数
     # limit = 3
