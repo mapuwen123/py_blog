@@ -44,12 +44,12 @@
         {% endblock pagelinks %}
         {% block nextlink %}
             {% if page_obj.has_next %}
-                <li><a href="?page{{ page_suffix }}={{ page_obj.next_page_number }}{{ getvars }}"><span
-                        uk-pagination-next></span>下一页</a></li>
+                <li><a href="?page{{ page_suffix }}={{ page_obj.next_page_number }}{{ getvars }}">下一页<span
+                        uk-pagination-next></span></a></li>
             {% else %}
                 {% if display_disabled_next_link %}
-                    <li><a href="?page{{ page_suffix }}={{ page_obj.next_page_number }}{{ getvars }}"><span
-                            uk-pagination-next></span>下一页</a></li>
+                    <li><a href="?page{{ page_suffix }}={{ page_obj.next_page_number }}{{ getvars }}">下一页<span
+                            uk-pagination-next></span></a></li>
                 {% endif %}
             {% endif %}
         {% endblock nextlink %}
