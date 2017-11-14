@@ -7,7 +7,10 @@ from .models import Articles, Content, Contact
 
 
 # Register your models here.
-@admin.register(Articles)
+class ContentInline(admin.TabularInline):
+    model = Content
+
+
 class ArticlesAdmin(admin.ModelAdmin):
     # 列表展示字段
     list_display = (
@@ -15,6 +18,9 @@ class ArticlesAdmin(admin.ModelAdmin):
         'title',
         'date',
     )
+    inlines = [
+        ContentInline,
+    ]
     # 每页展示条数
     list_per_page = 25
     # 排序
@@ -25,17 +31,7 @@ class ArticlesAdmin(admin.ModelAdmin):
     search_fields = ('title',)  # 搜索字段
 
 
-@admin.register(Content)
-class ContentAdmin(admin.ModelAdmin):
-    list_display = (
-        'id',
-    )
-    list_per_page = 25
-    ordering = (
-        '-id',
-    )
-
-    search_fields = ('title',)  # 搜索字段
+admin.site.register(Articles, ArticlesAdmin)
 
 
 @admin.register(Contact)
