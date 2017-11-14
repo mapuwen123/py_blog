@@ -21,14 +21,14 @@ class Articles(models.Model):
 # 正文内容
 class Content(models.Model):
     id = models.OneToOneField(Articles, primary_key=True)
-    content = RichTextUploadingField('内容')
+    content = RichTextUploadingField('正文')
 
     def __str__(self):
         return str(self.id)
 
     class Meta:
         verbose_name = '正文'
-        verbose_name_plural = '正文列表'
+        verbose_name_plural = '正文'
 
 
 # 联系
