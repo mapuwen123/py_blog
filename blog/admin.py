@@ -31,9 +31,9 @@ class ArticlesAdmin(admin.ModelAdmin):
     search_fields = ('title',)  # 搜索字段
 
     def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
         article_list = Articles.objects.order_by('-date')
         cache.set('article_list', article_list)
-        super().save_model(request, obj, form, change)
 
 
 admin.site.register(Articles, ArticlesAdmin)
