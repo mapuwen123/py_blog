@@ -2,15 +2,18 @@
 # coding: utf-8
 
 from django.shortcuts import render
-# from django.core.cache import cache
+from django.core.cache import cache
 from blog.models import Articles
 
 
 def index(request):
-    # cache.set('name', '222')
-    # print(cache.get('a'))
-    article_list = Articles.objects.order_by('-date')
+    article_list = cache.get('article_list')
+    print(article_list)
+    if article_list is None:
+        article_list = Articles.objects.order_by('-date')
+        cache.set('article_list', article_list, timeout=60 * 20)
     return render(request, 'blog/index.html', {'article_list': article_list})
+
     # # 每页显示条数
     # limit = 3
     # # 数据库查询

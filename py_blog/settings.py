@@ -77,15 +77,6 @@ TEMPLATES = [
             'context_processors': CONTEXT_PROCESSORS,
         },
     },
-    {
-        'BACKEND': 'blog.backends.Jinja2Backend',
-        'DIRS': ['templates'],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'environment': 'blog.jinja2_env.environment',
-            'context_processors': CONTEXT_PROCESSORS,
-        },
-    },
 ]
 
 WSGI_APPLICATION = 'py_blog.wsgi.application'
