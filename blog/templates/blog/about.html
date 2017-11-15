@@ -1,65 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" style="height: 100%">
-<head>
-    {% load staticfiles %}
-    <meta charset="UTF-8">
-    <title>首页</title>
-    <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "css/uikit.min.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "css/uikit-rtl.min.css" %}">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{% static "js/uikit.min.js" %}"></script>
-    <script src="{% static "js/uikit-icons.min.js" %}"></script>
-</head>
-<body style="height: 100%">
-<aside class="sidebar">
-    <div class="sidebar-container">
-        <div class="sidebar-logo">
-            <a href="/blog?page=1" class="logo">Marvin</a>
-        </div>
-        <menu class="sidebar-menu">
-            <li class="menu-items"><a class="menu-links" href="/blog?page=1">主页</a></li>
-            <li class="menu-items"><a class="menu-links" href="/blog/about">关于</a></li>
-            <li class="menu-items"><a class="menu-links" href="/blog/contact">联系</a></li>
-            <li class="menu-items"><a class="menu-links" href="https://github.com/mapuwen123">Github</a></li>
-            {#            <li class="menu-items"><a class="menu-links"#}
-            {#                                      href="https://github.com/artemsheludko/fresh/archive/master.zip">Download</a></li>#}
-        </menu>
+{% extends "blog/base.html" %}
+{% block title %}关于{% endblock %}
+{% block content %}
+    <main role="main">
+        <div class="content">
+            <article class="page-article">
+                <div class="wrap-content">
+                    <header class="page-header">
+                        <h1 class="page-title">About</h1>
+                        <div class="page-date"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                    </header>
+                    <div class="page-content">
 
-        <div class="sidebar-social">
-            Copyright ©2017 Marvin Powered By Marvin Version 1.0.0
-        </div>
+                        <p>This is the Fresh theme for Jekyll. You can find out more info about customizing your Jekyll
+                            theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a>
+                        </p>
 
-    </div>
-</aside>
-<main role="main">
-    <div class="content">
-        <article class="page-article">
-            <div class="wrap-content">
-                <header class="page-header">
-                    <h1 class="page-title">About</h1>
-                    <div class="page-date"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-                </header>
-                <div class="page-content">
+                        <p>You can find the source code for the Fresh theme at: <a
+                                href="https://github.com/artemsheludko/fresh">fresh</a></p>
 
-                    <p>This is the Fresh theme for Jekyll. You can find out more info about customizing your Jekyll
-                        theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a>
-                    </p>
+                        <p>You can find the source code for Jekyll at <a
+                                href="https://github.com/jekyll/jekyll">jekyll</a>
+                        </p>
 
-                    <p>You can find the source code for the Fresh theme at: <a
-                            href="https://github.com/artemsheludko/fresh">fresh</a></p>
+                    </div>
 
-                    <p>You can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">jekyll</a>
-                    </p>
 
                 </div>
+            </article>
 
-
-            </div>
-        </article>
-
-    </div>
-</main>
-</body>
-</html>
+        </div>
+    </main>
+{% endblock %}
