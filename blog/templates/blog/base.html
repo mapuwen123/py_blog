@@ -38,6 +38,12 @@
 </div>
 <div id="content">
     {% block content %}
+        <script charset="UTF-8" type="text/javascript">
+            if ($('#content').height() < $(window).height()) {
+                $('html').css('height', '100%');
+                $('body').css('height', '100%');
+            }
+        </script>
     {% endblock %}
 </div>
 </body>

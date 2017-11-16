@@ -6,7 +6,7 @@ from django.db import models
 class Articles(models.Model):
     id = models.AutoField('ID', primary_key=True)
     title = models.CharField('标题', max_length=100)
-    picture = models.ImageField('图片', upload_to='uploadImages', null=True)
+    picture = models.ImageField('图片', upload_to='uploadImages', null=True, blank=True)
     date = models.DateTimeField('时间', auto_now=True)
     describe = models.TextField('描述')
 

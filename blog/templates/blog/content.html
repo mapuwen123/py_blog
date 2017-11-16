@@ -31,7 +31,8 @@
 
         </div>
     </main>
-    <script>
+    {{ block.super }}
+    <script type="text/javascript">
         CKEDITOR.replace('editor_id');
         var html = CKEDITOR.instances.editor_id.getData();
         $('#show').html(html)
