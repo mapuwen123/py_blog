@@ -14,7 +14,7 @@ def contact(request):
         contact = Contact.objects.create(
             name=name,
             email=email,
-            message=message
+            message=message,
         )
         return render(request, 'blog/contact.html', {'result': name})
     else:

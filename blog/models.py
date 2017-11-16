@@ -44,3 +44,10 @@ class Contact(models.Model):
     class Meta:
         verbose_name = '反馈'
         verbose_name_plural = '反馈列表'
+
+
+# 用户
+class User(models.Model):
+    id = models.AutoField('ID', primary_key=True)
+    name = models.CharField('用户名', max_length=50)
+    password = models.CharField('密码', max_length=100)
