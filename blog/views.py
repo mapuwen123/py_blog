@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+from django.shortcuts import render
 from blog.view.content import content
 from blog.view.index import index
 from blog.view.contact import contact
@@ -32,3 +33,8 @@ def view_regist(request):
 
 def view_login(request):
     return login(request)
+
+
+def page_not_found(request):
+    url = request.META.get('HTTP_REFERER', "/")
+    return render(request, 'blog/404.html', {'url': url})
